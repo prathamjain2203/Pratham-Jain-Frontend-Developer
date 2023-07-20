@@ -22,9 +22,11 @@ const LandingPage = () => {
     e.preventDefault();
     const updatedFilters = {
       ...filters,
-      original_launch: filters?.original_launch?.toISOString(),
+      original_launch: filters?.original_launch
+        ? filters?.original_launch?.toISOString()
+        : "",
     };
-    getAllCapsules(setAllCapsules, filters, pagination);
+    getAllCapsules(setAllCapsules, updatedFilters, pagination);
   };
   return (
     <StyledLandingPage>
@@ -98,7 +100,7 @@ const LandingPage = () => {
         <div className="capsules-grid">
           {allCapsules?.length > 0 ? (
             allCapsules?.map((item, i) => {
-              return <CapsuleCard item={item} key={i} />;
+              return <CapsuleCard key={i} item={item} />;
             })
           ) : (
             <p>No Results Found</p>
@@ -109,6 +111,7 @@ const LandingPage = () => {
         {Array.from({ length: 4 })?.map((_, i) => {
           return (
             <div
+              key={i}
               onClick={() => {
                 setPagination((prev) => {
                   return {

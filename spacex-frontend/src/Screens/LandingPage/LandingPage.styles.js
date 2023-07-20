@@ -17,7 +17,7 @@ export const StyledLandingPage = styled.div`
   }
   .main-header {
     min-height: 100vh;
-    background: url("https://sxcontent9668.azureedge.us/cms-assets/assets/Launch_Page_Starlink1_vertical_18_DESKTOP_c851b30656.jpg")
+    background: url("https://www.mtu.edu/news/2019/06/images/oculus-launch-banner-photo-nasa-banner800.jpg")
       no-repeat center;
     background-size: cover;
     .header-content {
